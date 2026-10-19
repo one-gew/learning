@@ -85,8 +85,6 @@ def split_text(
         raise ValueError(
             f"overlap 必须满足 0 <= overlap < chunk_size，收到 overlap={overlap}, chunk_size={chunk_size}"
         )
-
-    # ② 空文本直接返回
     if not text:
         return []
 
@@ -111,6 +109,10 @@ def build_chunks(documents: list[dict]) -> list[dict]:
     for document in documents:
         source = document["source"]
         text = document["content"]
+        # 空文本直接返回
+        if not text:
+            print(f"跳过空文档：{source}")
+            continue
 
         for index, chunk in enumerate(split_text(text)):
             chunks.append({
@@ -120,9 +122,30 @@ def build_chunks(documents: list[dict]) -> list[dict]:
             })
 
     return chunks
+def search_chunks(
+        query: str,
+        chunks: list[dict],
+        top_k: int = 3,
+)->list[dict]:
+   keywords = query.split()
+   scored = []
+   for chunk in (chunks):
+       content = chunk["content"]
+       score = 0
+       for word in keywords:
+           if word in content:
+                score += 1
+       if score > 0:
+           scored.append((score,chunk))
+       scored.sort(key=lambda x: (-x[0], x[1]["source"], x[1]["chunk_index"]))
+   results = []
+   for score, chunk in scored[:top_k]:
+       item = {**chunk, "score": score}  # 复制 chunk，加 score
+       results.append(item)
+   return results
+
 def main() -> None:
     # 文档路径
-    global contents
     project_dir = Path(__file__).resolve().parent
     data_dir = project_dir / "data"
     output_dir = project_dir / "output"
@@ -153,7 +176,7 @@ def main() -> None:
     chunks_path = output_dir / "chunks.json"
 
     try:
-        save_documents(documents, documents_path)  # 复用你的保存函数（改成存 list）
+        save_documents(documents, documents_path)
         save_documents(chunks, chunks_path)
     except OSError as error:
         print(f"保存失败：{error}")
@@ -174,6 +197,23 @@ def main() -> None:
         print("SON 读回与内存中的 documents 完全一致")
     else:
         print("读回结果与 documents 不一致")
+
+    # query = input("请输入查询：").strip()
+    query = "台灯 保修"
+    if not query:
+        print("查询不能为空！")
+        return
+    #top_k = input("请输入返回条数：")
+    # if top_k < 0:
+    #     raise ValueError(f"top_k 不能为负数，收到 {top_k}")
+    result =  search_chunks(query, chunks,top_k = 5)
+    if not result:
+        print("查询结果为空！")
+    else:
+        print(f"找到了{len(result)}条查询结果：")
+        for i, r in enumerate(result,start=1):
+            print(f"\n{i}. 来源：{r['source']}（第 {r['chunk_index']} 块）\n   得分为{r['score']}")
+            print(f"   {r['content']}")
 
 
 if __name__ == "__main__":
