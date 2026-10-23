@@ -127,7 +127,10 @@ def search_chunks(
         chunks: list[dict],
         top_k: int = 3,
 )->list[dict]:
-   keywords = query.split()
+   keywords = []
+   for word in query.split():
+       if word and word not in keywords:
+           keywords.append(word)
    scored = []
    for chunk in (chunks):
        content = chunk["content"]
@@ -137,7 +140,7 @@ def search_chunks(
                 score += 1
        if score > 0:
            scored.append((score,chunk))
-       scored.sort(key=lambda x: (-x[0], x[1]["source"], x[1]["chunk_index"]))
+   scored.sort(key=lambda x: (-x[0], x[1]["source"], x[1]["chunk_index"]))
    results = []
    for score, chunk in scored[:top_k]:
        item = {**chunk, "score": score}  # 复制 chunk，加 score
@@ -198,15 +201,22 @@ def main() -> None:
     else:
         print("读回结果与 documents 不一致")
 
-    # query = input("请输入查询：").strip()
-    query = "台灯 保修"
+    query = input("请输入查询：").strip()
+    # query = "台灯 保修"
     if not query:
         print("查询不能为空！")
         return
-    #top_k = input("请输入返回条数：")
-    # if top_k < 0:
-    #     raise ValueError(f"top_k 不能为负数，收到 {top_k}")
-    result =  search_chunks(query, chunks,top_k = 5)
+    raw = input("请输入返回条数：").strip()
+    try:
+        top_k = int(raw)
+    except ValueError:
+        print(f"输入无效：{raw!r} 不是整数")
+        return
+
+    if top_k < 0:
+        print(f"top_k 不能为负数，收到 {top_k}")
+        return
+    result =  search_chunks(query, chunks,top_k)
     if not result:
         print("查询结果为空！")
     else:

@@ -1,0 +1,12 @@
+[
+  {"query": "保修 期限", "expected_sources": ["after_sales.txt", "sample.txt"]},
+  {"query": "退货 包装", "expected_sources": ["after_sales.txt"]},
+  {"query": "申请 售后", "expected_sources": ["after_sales.txt"]},
+  {"query": "维修 工作日", "expected_sources": ["after_sales.txt"]},
+  {"query": "充电 续航", "expected_sources": ["product_faq.txt"]},
+  {"query": "亮度 调节", "expected_sources": ["product_faq.txt"]},
+  {"query": "色温 模式", "expected_sources": ["product_faq.txt"]},
+  {"query": "蓝牙 配对", "expected_sources": ["product_faq.txt"]},
+  {"query": "火星宇宙飞船", "expected_sources": []},
+  {"query": "海底火山喷发", "expected_sources": []}
+]

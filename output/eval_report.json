@@ -1,0 +1,252 @@
+{
+  "top_k": 3,
+  "answerable_total": 8,
+  "hit_count": 8,
+  "hit_rate": 1.0,
+  "no_answer_total": 2,
+  "empty_result_count": 2,
+  "details": [
+    {
+      "query": "保修 期限",
+      "case_type": "有答案",
+      "expected_sources": [
+        "after_sales.txt",
+        "sample.txt"
+      ],
+      "actual_sources": [
+        "after_sales.txt",
+        "sample.txt"
+      ],
+      "passed": true,
+      "results": [
+        {
+          "source": "sample.txt",
+          "chunk_index": 0,
+          "content": "产品名称：智能台灯\n保修期限：购买之日起一年。\n使用说明：长按电源键三秒开机。",
+          "score": 2
+        },
+        {
+          "source": "after_sales.txt",
+          "chunk_index": 0,
+          "content": "智能台灯售后服务说明\n\n一、保修政策\n本产品自购买之日起提供一年保修服务。\n保修期内，因产品本身质量问题导致的故障，可免费维修或更换。\n以下情况不在保修范围内：人为损坏、进水、私自拆机、非官方配件造成",
+          "score": 1
+        },
+        {
+          "source": "after_sales.txt",
+          "chunk_index": 2,
+          "content": "为的质量问题，可申请换货。\n超过十五天但在保修期内，按保修政策处理。\n\n三、申请流程\n1. 通过官方 App 的“售后服务”入口，或拨打客服电话提交申请。\n2. 客服核实订单信息与问题描述，一般在两个",
+          "score": 1
+        }
+      ]
+    },
+    {
+      "query": "退货 包装",
+      "case_type": "有答案",
+      "expected_sources": [
+        "after_sales.txt"
+      ],
+      "actual_sources": [
+        "after_sales.txt"
+      ],
+      "passed": true,
+      "results": [
+        {
+          "source": "after_sales.txt",
+          "chunk_index": 1,
+          "content": "人为损坏、进水、私自拆机、非官方配件造成的故障。\n\n二、退换货政策\n自签收之日起七天内，产品未使用且包装完好，支持无理由退货。\n自签收之日起十五天内，若出现非人为的质量问题，可申请换货。\n超过十五天但",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "query": "申请 售后",
+      "case_type": "有答案",
+      "expected_sources": [
+        "after_sales.txt"
+      ],
+      "actual_sources": [
+        "after_sales.txt"
+      ],
+      "passed": true,
+      "results": [
+        {
+          "source": "after_sales.txt",
+          "chunk_index": 2,
+          "content": "为的质量问题，可申请换货。\n超过十五天但在保修期内，按保修政策处理。\n\n三、申请流程\n1. 通过官方 App 的“售后服务”入口，或拨打客服电话提交申请。\n2. 客服核实订单信息与问题描述，一般在两个",
+          "score": 2
+        },
+        {
+          "source": "after_sales.txt",
+          "chunk_index": 3,
+          "content": " 客服核实订单信息与问题描述，一般在两个工作日内回复。\n3. 审核通过后，按客服指引寄回产品，或等待上门取件。\n4. 维修或换货完成后，产品将寄回至您填写的地址。\n\n四、所需资料\n申请售后时，请准备以",
+          "score": 2
+        },
+        {
+          "source": "after_sales.txt",
+          "chunk_index": 4,
+          "content": "。\n\n四、所需资料\n申请售后时，请准备以下资料：\n1. 购买凭证（订单截图或发票）。\n2. 产品序列号（位于台灯底部标签）。\n3. 故障描述，最好附带照片或视频。\n4. 收件人姓名、电话与地址。\n\n五",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "query": "维修 工作日",
+      "case_type": "有答案",
+      "expected_sources": [
+        "after_sales.txt"
+      ],
+      "actual_sources": [
+        "after_sales.txt"
+      ],
+      "passed": true,
+      "results": [
+        {
+          "source": "after_sales.txt",
+          "chunk_index": 3,
+          "content": " 客服核实订单信息与问题描述，一般在两个工作日内回复。\n3. 审核通过后，按客服指引寄回产品，或等待上门取件。\n4. 维修或换货完成后，产品将寄回至您填写的地址。\n\n四、所需资料\n申请售后时，请准备以",
+          "score": 2
+        },
+        {
+          "source": "after_sales.txt",
+          "chunk_index": 5,
+          "content": "。\n4. 收件人姓名、电话与地址。\n\n五、处理时效\n一般维修在三到五个工作日内完成，换货在七到十个工作日内完成。\n如遇节假日或配件缺货，时效可能顺延，客服会提前告知。\n\n如有疑问，可随时联系在线客服，",
+          "score": 2
+        },
+        {
+          "source": "after_sales.txt",
+          "chunk_index": 0,
+          "content": "智能台灯售后服务说明\n\n一、保修政策\n本产品自购买之日起提供一年保修服务。\n保修期内，因产品本身质量问题导致的故障，可免费维修或更换。\n以下情况不在保修范围内：人为损坏、进水、私自拆机、非官方配件造成",
+          "score": 1
+        }
+      ]
+    },
+    {
+      "query": "充电 续航",
+      "case_type": "有答案",
+      "expected_sources": [
+        "product_faq.txt"
+      ],
+      "actual_sources": [
+        "product_faq.txt"
+      ],
+      "passed": true,
+      "results": [
+        {
+          "source": "product_faq.txt",
+          "chunk_index": 2,
+          "content": "档，减少对眼睛的刺激。\n\n三、色温调节\n双击电源键可切换色温模式，分为暖光、自然光、冷光三种。\n暖光适合休息阅读，冷光适合精细工作，自然光适合日常使用。\n\n四、充电与续航\n本产品内置锂电池，使用 Ty",
+          "score": 2
+        },
+        {
+          "source": "product_faq.txt",
+          "chunk_index": 3,
+          "content": "充电与续航\n本产品内置锂电池，使用 Type-C 接口充电，充满约需三小时。\n满电状态下，中亮度可使用约八小时，高亮度约四小时。\n电量低于百分之十时，指示灯会闪烁红色提醒，请及时充电。\n\n五、常见故障",
+          "score": 2
+        },
+        {
+          "source": "product_faq.txt",
+          "chunk_index": 4,
+          "content": "烁红色提醒，请及时充电。\n\n五、常见故障\n1. 无法开机：检查电源、长按三秒，仍无效请联系售后。\n2. 灯光闪烁：可能是电量过低或适配器接触不良，请充电或更换适配器。\n3. App 无法连接：确认手机",
+          "score": 1
+        }
+      ]
+    },
+    {
+      "query": "亮度 调节",
+      "case_type": "有答案",
+      "expected_sources": [
+        "product_faq.txt"
+      ],
+      "actual_sources": [
+        "product_faq.txt"
+      ],
+      "passed": true,
+      "results": [
+        {
+          "source": "product_faq.txt",
+          "chunk_index": 0,
+          "content": "智能台灯使用常见问题\n\n一、开机与关机\n长按电源键三秒即可开机，指示灯变为白色常亮。再次长按三秒关机。\n若长按无反应，请先确认电源适配器已插紧，并检查插座是否有电。\n\n二、亮度调节\n开机后，短按电源键",
+          "score": 2
+        },
+        {
+          "source": "product_faq.txt",
+          "chunk_index": 1,
+          "content": "电。\n\n二、亮度调节\n开机后，短按电源键可在五档亮度之间循环切换。\n也可以使用配套 App 的滑块无级调节，调节范围约为百分之十到百分之百。\n夜间建议使用低亮度档，减少对眼睛的刺激。\n\n三、色温调节\n",
+          "score": 2
+        },
+        {
+          "source": "product_faq.txt",
+          "chunk_index": 2,
+          "content": "档，减少对眼睛的刺激。\n\n三、色温调节\n双击电源键可切换色温模式，分为暖光、自然光、冷光三种。\n暖光适合休息阅读，冷光适合精细工作，自然光适合日常使用。\n\n四、充电与续航\n本产品内置锂电池，使用 Ty",
+          "score": 1
+        }
+      ]
+    },
+    {
+      "query": "色温 模式",
+      "case_type": "有答案",
+      "expected_sources": [
+        "product_faq.txt"
+      ],
+      "actual_sources": [
+        "product_faq.txt"
+      ],
+      "passed": true,
+      "results": [
+        {
+          "source": "product_faq.txt",
+          "chunk_index": 2,
+          "content": "档，减少对眼睛的刺激。\n\n三、色温调节\n双击电源键可切换色温模式，分为暖光、自然光、冷光三种。\n暖光适合休息阅读，冷光适合精细工作，自然光适合日常使用。\n\n四、充电与续航\n本产品内置锂电池，使用 Ty",
+          "score": 2
+        },
+        {
+          "source": "product_faq.txt",
+          "chunk_index": 1,
+          "content": "电。\n\n二、亮度调节\n开机后，短按电源键可在五档亮度之间循环切换。\n也可以使用配套 App 的滑块无级调节，调节范围约为百分之十到百分之百。\n夜间建议使用低亮度档，减少对眼睛的刺激。\n\n三、色温调节\n",
+          "score": 1
+        },
+        {
+          "source": "product_faq.txt",
+          "chunk_index": 5,
+          "content": "配器。\n3. App 无法连接：确认手机蓝牙已开启、台灯在配对模式，重新配对即可。\n4. 充电无反应：检查 Type-C 线是否完好，换线或换适配器测试。\n\n如以上方法均无法解决，请拨打客服电话或通过",
+          "score": 1
+        }
+      ]
+    },
+    {
+      "query": "蓝牙 配对",
+      "case_type": "有答案",
+      "expected_sources": [
+        "product_faq.txt"
+      ],
+      "actual_sources": [
+        "product_faq.txt"
+      ],
+      "passed": true,
+      "results": [
+        {
+          "source": "product_faq.txt",
+          "chunk_index": 5,
+          "content": "配器。\n3. App 无法连接：确认手机蓝牙已开启、台灯在配对模式，重新配对即可。\n4. 充电无反应：检查 Type-C 线是否完好，换线或换适配器测试。\n\n如以上方法均无法解决，请拨打客服电话或通过",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "query": "火星宇宙飞船",
+      "case_type": "无匹配",
+      "expected_sources": [],
+      "actual_sources": [],
+      "passed": true,
+      "results": []
+    },
+    {
+      "query": "海底火山喷发",
+      "case_type": "无匹配",
+      "expected_sources": [],
+      "actual_sources": [],
+      "passed": true,
+      "results": []
+    }
+  ]
+}
